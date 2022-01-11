@@ -17,7 +17,8 @@ public class BillController {
     @Autowired
     BillService service;
     @ModelAttribute("productList")
-    public Map < String, String > populateProductType() {
+    public Map < String, String > populateProductType() 
+    {
         Map < String, String > serviceMap = new HashMap < String, String > ();
         serviceMap.put("HeadPhone", "HeadPhone");
         serviceMap.put("TravelAdapter", "TravelAdapter");
@@ -26,17 +27,22 @@ public class BillController {
         serviceMap.put("USBCable", "USBCable");
         return serviceMap;
     }
+
     @GetMapping("/showPage")
-    public String showPage(@ModelAttribute("order") Order order) {
+    public String showPage(@ModelAttribute("order") Order order) 
+    {
         return "showpage";
     }
+
     // invoke the service class - calculateTotalCost method.
     @PostMapping("/billDesk")
     public String calculateTotalCost(@Valid @ModelAttribute("order") Order order,
         BindingResult result,
-        ModelMap model) {
+        ModelMap model) 
+        {
         // fill the code here
-        if (result.hasErrors()) {
+        if (result.hasErrors()) 
+        {
             return "showpage";
         } else {
             double totalCost = service.calculateTotalCost(order);

@@ -11,11 +11,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 @Configuration
-public class InternationalizationConfig implements WebMvcConfigurer {
+public class InternationalizationConfig implements WebMvcConfigurer 
+{
     //Create a SessionLocaleResolver object and set the default locale to English return
     the SessionLocaleResolver object
     @Bean
-    public LocaleResolver localeResolver() {
+    public LocaleResolver localeResolver() 
+    {
         SessionLocaleResolver localeResolver = new SessionLocaleResolver();
         localeResolver.setDefaultLocale(Locale.US);
         return localeResolver;
@@ -23,20 +25,26 @@ public class InternationalizationConfig implements WebMvcConfigurer {
     // Create LocaleChangeInterceptor object and set the parameter name as
     language
     // and return the localeChangeInterceptor
+    
     @Bean
-    public LocaleChangeInterceptor localeChangeInterceptor() {
+    public LocaleChangeInterceptor localeChangeInterceptor() 
+    {
         LocaleChangeInterceptor interceptor = new LocaleChangeInterceptor();
         interceptor.setParamName("language");
         return interceptor;
     }
+
     @Bean
-    public LocalValidatorFactoryBean getValidator() {
+    public LocalValidatorFactoryBean getValidator() 
+    {
         LocalValidatorFactoryBean bean = new LocalValidatorFactoryBean();
         bean.setValidationMessageSource(messageSource());
         return bean;
     }
+
     @Bean
-    public MessageSource messageSource() {
+    public MessageSource messageSource() 
+    {
         ReloadableResourceBundleMessageSource messageSource = new
         ReloadableResourceBundleMessageSource();
         messageSource.setBasename("classpath:messages");
@@ -45,7 +53,9 @@ public class InternationalizationConfig implements WebMvcConfigurer {
     }
     // register the LocaleChangeInterceptor
     @Override
-    public void addInterceptors(InterceptorRegistry registry) {
+    public void addInterceptors(InterceptorRegistry registry) 
+    {
         registry.addInterceptor(localeChangeInterceptor());
     }
+
 }
