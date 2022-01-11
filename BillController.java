@@ -13,7 +13,8 @@ import com.model.Order;
 import com.service.BillService;
 //use appropriate annotation to configure BillController as Controller
 @Controller
-public class BillController {
+public class BillController 
+{
     @Autowired
     BillService service;
     @ModelAttribute("productList")
@@ -36,19 +37,19 @@ public class BillController {
 
     // invoke the service class - calculateTotalCost method.
     @PostMapping("/billDesk")
-    public String calculateTotalCost(@Valid @ModelAttribute("order") Order order,
-        BindingResult result,
-        ModelMap model) 
-        {
+    public String calculateTotalCost(@Valid @ModelAttribute("order") Order order,BindingResult result,ModelMap model) 
+    {
         // fill the code here
         if (result.hasErrors()) 
         {
             return "showpage";
-        } else {
+        } 
+        else {
             double totalCost = service.calculateTotalCost(order);
             model.put("customerName", order.getCustomerName());
             model.put("totalCost", totalCost);
             return "billdesk";
         }
     }
+    
 }
