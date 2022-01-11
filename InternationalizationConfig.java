@@ -13,8 +13,7 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 @Configuration
 public class InternationalizationConfig implements WebMvcConfigurer 
 {
-    //Create a SessionLocaleResolver object and set the default locale to English return
-    the SessionLocaleResolver object
+    //Create a SessionLocaleResolver object and set the default locale to English return the SessionLocaleResolver object
     @Bean
     public LocaleResolver localeResolver() 
     {
@@ -22,8 +21,7 @@ public class InternationalizationConfig implements WebMvcConfigurer
         localeResolver.setDefaultLocale(Locale.US);
         return localeResolver;
     }
-    // Create LocaleChangeInterceptor object and set the parameter name as
-    language
+    // Create LocaleChangeInterceptor object and set the parameter name as language
     // and return the localeChangeInterceptor
     
     @Bean

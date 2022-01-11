@@ -39,6 +39,8 @@
                   <form:errors path="customerName"></form:errors>
                </td>
             </tr>
+           <!-- id1 end-->
+
             <tr>
                <td id="id2">
                   <spring:message code="label.contactNumber"
@@ -52,6 +54,8 @@
                   <form:errors path="contactNumber"></form:errors>
                </td>
             </tr>
+           <!-- id2 end-->
+
             <tr>
                <td id="id3">
                   <spring:message code="label.productName"
@@ -63,6 +67,8 @@
                      items="${productList}" />
                </td>
             </tr>
+           <!-- id3 end-->
+
             <tr>
                <td id="id2">
                   <spring:message code="label.quantity" />
@@ -75,12 +81,14 @@
                   <form:errors path="quantity"></form:errors>
                </td>
             </tr>
+           <!-- id2quantity end-->
             <tr>
                <td><input type="submit" id="submit" name="submit"
                   value="CalculateCost" /></td>
                <td><input type="reset" id="reset" name="reset"
                   value="Cancel" /></td>
             </tr>
+            
          </table>
       </form:form>
    </body>

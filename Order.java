@@ -11,34 +11,42 @@ public class Order
     private String productName;
     @Positive(message = "{error.quantity.negative}")
     private int quantity;
+
     public String getCustomerName() 
     {
         return customerName;
     }
+
     public void setCustomerName(String customerName) 
     {
         this.customerName = customerName;
     }
+
     public String getContactNumber() 
     {
         return contactNumber;
     }
+
     public void setContactNumber(String contactNumber) 
     {
         this.contactNumber = contactNumber;
     }
+
     public String getProductName() 
     {
         return productName;
     }
+
     public void setProductName(String productName) 
     {
         this.productName = productName;
     }
+
     public int getQuantity() 
     {
         return quantity;
     }
+    
     public void setQuantity(int quantity) 
     {
         this.quantity = quantity;
